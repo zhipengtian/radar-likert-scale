@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+    <head>
+        <title>Radar Selector Demo</title>
+       	<meta http-equiv="Content-type" lang='en-us' content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="radar-chart.js"></script>
+        <script>
+        	var data = [
+        		{axis: "Basketball", value: 3, order:0}, 
+                {axis: "Swimming", value: 3, order:1}, 
+                {axis: "Running", value: 3, order:2},
+                {axis: "Shooting", value: 3, order:3},
+                {axis: "Rafting", value: 3, order:4}
+                
+            ];
+        	$(document).ready(function() {
+        		RadarChart.draw("#chart", data);
+        	});
+        </script>
+    </head>
+    <body>       
+			<h1>How good are you at sports?</h1>
+            <div class="chart_section">
+            	<div id="chart" style='margin-left:20px; float:left'></div>
+            </div>
+            <div>
+            	<h3>Result:</h3><br/>
+            	<table>
+            	<tr><td>Basketball: </td><td><input type="text" id="input_0" value="Neutral" readonly/></td></tr>
+            	<tr><td>Swimming: </td><td><input type="text" id="input_1" value="Neutral" readonly/></td></tr>
+            	<tr><td>Running: </td><td><input type="text" id="input_2" value="Neutral" readonly/></td></tr>
+            	<tr><td>Shooting: </td><td><input type="text" id="input_3" value="Neutral" readonly/></td></tr>
+            	<tr><td>Rafting: </td><td><input type="text" id="input_4" value="Neutral" readonly/></td></tr>
+            </div>
+            	
+    </body>
+    
+    <style>
+    input {
+	    margin: 5px 5px 5px 5px;
+	    text-align: center;
+    }
+    .chart_section circle {
+        cursor:pointer;
+    }
+    </style>
+</html>
